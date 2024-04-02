@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/home/alxgav/postgresql/data/user_db # change that path
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123qwerty
+      - POSTGRES_DB=user_db
+      - POSTGRES_HOST=127.0.0.1
+volumes:
+  postgres_data:
